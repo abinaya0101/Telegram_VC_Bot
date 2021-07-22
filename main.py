@@ -32,7 +32,7 @@ async def help(_, message):
 
 @app.on_message(filters.command("repo") & ~filters.private)
 async def repo(_, message):
-    await message.reply_text(REPO_TEXT, quote=False)
+    await message.reply_text(empty)
 
 
 @app.on_message(
@@ -43,7 +43,7 @@ async def repo(_, message):
 async def joinvc(_, message, manual=False):
     if "call" in db:
         return await message.reply_text(
-            "__**Bot Is Already In The VC**__"
+            "__**Bot Sudah Di Voice**__"
         )
     os.popen("cp etc/sample_input.raw input.raw")
     vc = GroupCall(app, "input.raw")
